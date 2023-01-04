@@ -1,6 +1,7 @@
 package commonUdf;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
+
 import java.util.List;
 
 public class arrayDoubleSimCosine extends UDF {
