@@ -26,5 +26,10 @@ public class testDemo {
         int res3 = udf3.evaluate(list1_string, list2_string);
         System.out.println(res3);
 
+        List<Integer> all_num = asList(1,2,3,4,5);
+        oneListToCombinations udf4 = new oneListToCombinations();
+        List<List<Integer>> res4 = udf4.evaluate(all_num);
+        System.out.println(res4);
+
     }
 }

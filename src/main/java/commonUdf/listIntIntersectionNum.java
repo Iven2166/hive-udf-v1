@@ -9,7 +9,7 @@ public class listIntIntersectionNum extends UDF{
         // 提前确保两个list应该是都去重了
 //        list1.retainAll(list2); // The code is simple but the algorithmic complexity is poor: O(n×m)
         Sets.SetView<Integer> res = Sets.intersection(Sets.newHashSet(list1), Sets.newHashSet(list2));
-        System.out.println(res);
+//        System.out.println(res);
         return res.size();
     }
 }
