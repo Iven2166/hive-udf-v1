@@ -1,8 +1,10 @@
 package commonUdf;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
+
 
 public class testDemo {
     public static void main(String[] args) {
@@ -26,9 +28,13 @@ public class testDemo {
         int res3 = udf3.evaluate(list1_string, list2_string);
         System.out.println(res3);
 
-        List<Integer> all_num = asList(1,2,3,4,5);
+        ArrayList<Integer> all_num = new ArrayList<Integer>();
+        all_num.add(1);
+        all_num.add(2);
+        all_num.add(3);
+        all_num.add(100);
         oneListToCombinations udf4 = new oneListToCombinations();
-        List<List<Integer>> res4 = udf4.evaluate(all_num);
+        ArrayList<ArrayList<Integer>> res4 = udf4.evaluate(all_num);
         System.out.println(res4);
 
     }
