@@ -33,9 +33,23 @@ public class testDemo {
         all_num.add(2);
         all_num.add(3);
         all_num.add(100);
-        oneListToCombinations udf4 = new oneListToCombinations();
+        oneArrayIntToCombinations udf4 = new oneArrayIntToCombinations();
         ArrayList<ArrayList<Integer>> res4 = udf4.evaluate(all_num);
         System.out.println(res4);
 
+        System.out.println("测试分割str后，得到两两组合");
+        String users_str = "123,456,789,191,2421,12,2434,5555,6666,7777";
+        usersStringToCombinations udf5 = new usersStringToCombinations();
+        ArrayList<ArrayList<String>> res5 = udf5.evaluate(users_str);
+        ArrayList<ArrayList<String>> res5_sample5 = udf5.evaluate(users_str,5);
+        System.out.println(res5);
+        System.out.println(res5_sample5);
+
+        System.out.println("两个str用逗号分隔后，得到的交集");
+        String item1_str = "123,456,789,191";
+        String item2_str = "123,777,789";
+        twoItemsStringToIntersectionNum udf6 = new twoItemsStringToIntersectionNum();
+        int res6 = udf6.evaluate(item1_str, item2_str);
+        System.out.println(res6);
     }
 }
