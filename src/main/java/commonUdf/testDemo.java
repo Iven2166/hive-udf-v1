@@ -1,6 +1,7 @@
 package commonUdf;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -28,7 +29,8 @@ public class testDemo {
         int res3 = udf3.evaluate(list1_string, list2_string);
         System.out.println(res3);
 
-        ArrayList<Integer> all_num = new ArrayList<Integer>();
+        System.out.println("测试一个array，得到两两组合");
+        List<Integer> all_num = new ArrayList<Integer>();
         all_num.add(1);
         all_num.add(2);
         all_num.add(3);
@@ -45,11 +47,23 @@ public class testDemo {
         System.out.println(res5);
         System.out.println(res5_sample5);
 
+        usersListToCombinations udf5_2 = new usersListToCombinations();
+        List<String> users_list = Arrays.asList(users_str.split(","));
+        ArrayList<ArrayList<String>> res5_2 = udf5_2.evaluate(users_list, 5);
+        System.out.println(res5_2);
+
         System.out.println("两个str用逗号分隔后，得到的交集");
         String item1_str = "123,456,789,191";
         String item2_str = "123,777,789";
         twoItemsStringToIntersectionNum udf6 = new twoItemsStringToIntersectionNum();
-        int res6 = udf6.evaluate(item1_str, item2_str);
-        System.out.println(res6);
+        int res6_1 = udf6.evaluate(item1_str, item2_str);
+        System.out.println(res6_1);
+
+        System.out.println("改为List<String>");
+        twoItemsListOfStringToIntersectionNum udf7 = new twoItemsListOfStringToIntersectionNum();
+        List<String> item1_list = Arrays.asList(item1_str.split(","));
+        List<String> item2_list = Arrays.asList(item2_str.split(","));
+        int res7 = udf7.evaluate(item1_list, item2_list);
+        System.out.println(res7);
     }
 }

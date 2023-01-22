@@ -1,10 +1,12 @@
 package commonUdf;
+
 import org.apache.hadoop.hive.ql.exec.UDF;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class oneArrayIntToCombinations extends UDF{
-    public ArrayList<ArrayList<Integer>> evaluate(ArrayList<Integer> all_num) {
+    public ArrayList<ArrayList<Integer>> evaluate(List<Integer> all_num) {
         int all_num_size = all_num.size();
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
         for (int i = 0; i < all_num_size; i++) {
